@@ -1,0 +1,10 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Local experiments — keep the repo to the skill itself
+/scratch/
+/tmp/

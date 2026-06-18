@@ -1,0 +1,32 @@
+{
+  "project": {
+    "name": "",
+    "codename": "",
+    "type": "",
+    "created": "",
+    "phase": ""
+  },
+  "brand": {
+    "display_name": "",
+    "author_attribution": { "default": "", "by_language": {} },
+    "slogan": "",
+    "logo_assets": "documentation/assets/",
+    "design_language": {
+      "primary_colors": [],
+      "fonts": [],
+      "tone_keywords": [],
+      "visual_style": "",
+      "do": [],
+      "dont": []
+    },
+    "eeat": { "trust_anchor_url": "", "identity": "" }
+  },
+  "commercial": {
+    "payment_entity": "",
+    "pricing": {},
+    "monetization": ""
+  },
+  "languages": [],
+  "channels_or_imprints": [],
+  "notes": "Add or remove fields per project archetype. ALL concrete values that are referenced in more than one place (pricing / colors / attribution) live ONLY here; CLAUDE.md and sub-agents reference them by pointer."
+}
