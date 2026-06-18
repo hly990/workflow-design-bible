@@ -1,0 +1,31 @@
+{
+  "name": "workflow-design-bible",
+  "owner": {
+    "name": "preangelleo",
+    "url": "https://github.com/hly990"
+  },
+  "description": "Marketplace for the Workflow Design Bible plugin — a constitution generator for autonomous, agent-run projects.",
+  "plugins": [
+    {
+      "name": "workflow-design-bible",
+      "source": "./",
+      "description": "A constitution generator for autonomous, agent-run projects: interview -> scaffold a lean CLAUDE.md constitution, a brand configuration.json, and a documentation/ skeleton around a CEO-orchestrated architecture.",
+      "version": "2.0.0",
+      "author": {
+        "name": "preangelleo",
+        "url": "https://github.com/hly990"
+      },
+      "homepage": "https://github.com/hly990/workflow-design-bible",
+      "license": "MIT",
+      "keywords": [
+        "constitution",
+        "autonomous-agents",
+        "scaffold",
+        "claude-code",
+        "workflow",
+        "ceo-agent",
+        "skill"
+      ]
+    }
+  ]
+}

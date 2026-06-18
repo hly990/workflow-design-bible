@@ -3,8 +3,29 @@
 All notable changes to the **Workflow Design Bible** are documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
-The skill version is mirrored in three places that must stay in sync:
-`VERSION`, the `version:` field in `SKILL.md` frontmatter, and the top entry here.
+The version is mirrored in places that must stay in sync: `VERSION`, the
+`version:` field in `skills/workflow-design-bible/SKILL.md` frontmatter,
+`.claude-plugin/plugin.json`, the plugin entry in `.claude-plugin/marketplace.json`,
+and the top entry here.
+
+## [2.0.0] — 2026-06-19
+
+Repackaged as an installable **Claude Code plugin** (with an in-repo marketplace).
+
+### Added
+- **`.claude-plugin/plugin.json`** — the plugin manifest, so the repo installs
+  as a Claude Code plugin.
+- **`.claude-plugin/marketplace.json`** — an in-repo marketplace listing the
+  plugin, so users can add this repo as a marketplace and install in one step.
+
+### Changed
+- **BREAKING (install layout):** the skill moved from the repo root to
+  `skills/workflow-design-bible/SKILL.md` (with its `templates/` alongside) so
+  Claude Code's plugin loader auto-discovers it. The old
+  `git clone … ~/.claude/skills/workflow-design-bible` install no longer works
+  as-is; install via the plugin/marketplace flow (see README) instead.
+- README install instructions rewritten around `/plugin marketplace add` +
+  `/plugin install`.
 
 ## [1.0.0] — 2026-06-18
 

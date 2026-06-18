@@ -1,0 +1,22 @@
+{
+  "name": "workflow-design-bible",
+  "displayName": "Workflow Design Bible",
+  "version": "2.0.0",
+  "description": "A constitution generator for autonomous, agent-run projects. Runs a short structured interview, then scaffolds a complete constitution + documentation system (a lean root CLAUDE.md, a brand configuration.json, and a documentation/ skeleton) around a CEO-orchestrated architecture: main agent -> sub-agents -> skills -> CLI/MCP.",
+  "author": {
+    "name": "preangelleo",
+    "url": "https://github.com/hly990"
+  },
+  "homepage": "https://github.com/hly990/workflow-design-bible",
+  "repository": "https://github.com/hly990/workflow-design-bible",
+  "license": "MIT",
+  "keywords": [
+    "constitution",
+    "autonomous-agents",
+    "scaffold",
+    "claude-code",
+    "workflow",
+    "ceo-agent",
+    "skill"
+  ]
+}

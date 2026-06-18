@@ -45,27 +45,39 @@ that knows how to run and improve itself.
 7. **Constitution-as-code** — a `doctor` command keeps the docs' claims equal to filesystem reality.
 8. **A standard project shape** — root constitution + `documentation/` from birth.
 
-Full detail lives in [`SKILL.md`](./SKILL.md).
+Full detail lives in [`SKILL.md`](./skills/workflow-design-bible/SKILL.md).
 
 ## How to use it
 
-**Option A — read the doc.** Open [`SKILL.md`](./SKILL.md) (and the
-[`templates/`](./templates)) and paste it into any capable LLM. Follow the
-interview protocol; fill in the templates by hand. No runtime required.
+**Option A — install the plugin (recommended).** This repo is a self-contained
+[Claude Code](https://claude.com/claude-code) plugin **and** marketplace. Add the
+marketplace, then install the plugin — from inside Claude Code:
 
-**Option B — install the skill.** Copy this folder into your agent runtime's
-skills directory so it triggers automatically when you start a new project. For
-[Claude Code](https://claude.com/claude-code), for example:
+```text
+/plugin marketplace add hly990/workflow-design-bible
+/plugin install workflow-design-bible@workflow-design-bible
+```
+
+…or from the terminal with the `claude` CLI:
 
 ```bash
-# global install (available in every working directory)
-git clone https://github.com/preangelleo/workflow-design-bible.git \
-  ~/.claude/skills/workflow-design-bible
-# then reload skills in your session
+claude plugin marketplace add hly990/workflow-design-bible
+claude plugin install workflow-design-bible@workflow-design-bible
 ```
 
 Then just say *"start a new autonomous project"* (or describe the project) and the
 skill runs the interview and generates the constitution skeleton.
+
+**Option B — read the doc (no runtime).** Open
+[`skills/workflow-design-bible/SKILL.md`](./skills/workflow-design-bible/SKILL.md)
+(and the [`templates/`](./skills/workflow-design-bible/templates)) and paste it
+into any capable LLM. Follow the interview protocol; fill in the templates by
+hand. No runtime required.
+
+> **Manual install fallback.** You can also clone the repo and copy the skill
+> folder into your runtime's skills directory, e.g. for Claude Code:
+> `cp -r skills/workflow-design-bible ~/.claude/skills/workflow-design-bible`,
+> then reload skills. Prefer the plugin flow above.
 
 > Filenames like `CLAUDE.md` are conventions — substitute whatever your runtime
 > reads as top-level agent instructions (e.g. `AGENTS.md`). The ideas are
@@ -75,9 +87,11 @@ skill runs the interview and generates the constitution skeleton.
 
 | Path | What it is |
 |---|---|
-| [`SKILL.md`](./SKILL.md) | The meta system prompt: philosophies + interview protocol + generation rules. The main artifact. |
-| [`templates/CLAUDE.md.template`](./templates/CLAUDE.md.template) | The fill-in constitution skeleton (Rules **and** Don'ts). |
-| [`templates/configuration.json.template`](./templates/configuration.json.template) | The brand single-source-of-truth. |
+| [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json) | The Claude Code plugin manifest. |
+| [`.claude-plugin/marketplace.json`](./.claude-plugin/marketplace.json) | The in-repo marketplace listing this plugin. |
+| [`skills/workflow-design-bible/SKILL.md`](./skills/workflow-design-bible/SKILL.md) | The meta system prompt: philosophies + interview protocol + generation rules. The main artifact. |
+| [`skills/workflow-design-bible/templates/CLAUDE.md.template`](./skills/workflow-design-bible/templates/CLAUDE.md.template) | The fill-in constitution skeleton (Rules **and** Don'ts). |
+| [`skills/workflow-design-bible/templates/configuration.json.template`](./skills/workflow-design-bible/templates/configuration.json.template) | The brand single-source-of-truth. |
 | [`CHANGELOG.md`](./CHANGELOG.md) | Version history (semver). |
 | [`VERSION`](./VERSION) | Current version, for tooling / online upgrades. |
 
@@ -91,8 +105,11 @@ project's own CEO + maintainer agent.
 ## Versioning & upgrades
 
 Semantic versioning. The version is mirrored in `VERSION`, the `version:` field of
-`SKILL.md` frontmatter, and `CHANGELOG.md`. To upgrade an installed copy, pull the
-repo (or re-clone) and reload your skills. Watch releases for new versions.
+`skills/workflow-design-bible/SKILL.md` frontmatter, `.claude-plugin/plugin.json`,
+the plugin entry in `.claude-plugin/marketplace.json`, and `CHANGELOG.md`. To
+upgrade an installed copy, run `claude plugin marketplace update workflow-design-bible`
+then `claude plugin install workflow-design-bible@workflow-design-bible` (or
+`/plugin` from inside Claude Code). Watch releases for new versions.
 
 ## Contributing
 
