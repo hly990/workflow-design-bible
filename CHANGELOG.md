@@ -8,7 +8,35 @@ The version is mirrored in places that must stay in sync: `VERSION`, the
 `.claude-plugin/plugin.json`, the plugin entry in `.claude-plugin/marketplace.json`,
 and the top entry here.
 
-## [2.0.0] — 2026-06-19
+## [3.0.0] — 2026-06-20
+
+Upgraded from a workflow design guide into the **Loop Design Bible**: the repo now
+teaches you to **design self-running agent loops, not just write prompts**, on top of
+the existing constitution generator.
+
+### Added
+- **The eight-part loop architecture** — Trigger · Context Injection · Agent Role ·
+  Tools · Verification · State · Retry · Escalation — as the spine of the whole Bible.
+- **`docs/01–06`** — a six-part curriculum: loop thinking, loop anatomy,
+  verification & state (the two load-bearing parts), retry & escalation, a
+  workflow→loop bridge mapping the eight philosophies to the eight parts, and an
+  agent-loop pattern catalog.
+- **`templates/loop-blueprint.md`** — design one loop (the eight parts with blanks).
+- **`templates/verification-checklist.md`** — design/run the verification gate (part ⑤).
+- **`templates/memory-state-template.md`** — design what persists between iterations (part ⑥).
+- **`templates/skill-template.md`** — freeze a recurring action into a capability (part ④).
+- **`examples/coding-agent-loop.md`, `content-production-loop.md`,
+  `customer-acquisition-loop.md`** — three fully-filled, worked loop designs.
+
+### Changed
+- **README.md** reframed around "design the loop, not the prompt," with a navigation
+  table for the new docs/templates/examples.
+- **`SKILL.md`** gains a new **§0 "The loop lens"** (the eight parts + the Bible map)
+  and ties Round 3 of the interview to the loop blueprint; the constitution's pipeline
+  spine is now explicitly a chain of loops. Frontmatter/title repositioned to "Loop
+  Design Bible." Display name updated in the plugin + marketplace manifests.
+
+
 
 Repackaged as an installable **Claude Code plugin** (with an in-repo marketplace).
 

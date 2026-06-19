@@ -1,20 +1,27 @@
 ---
 name: workflow-design-bible
-description: Generate a complete "constitution + documentation system" for a new autonomous, agent-run project — a content channel, an ebook press, an SEO tool-site, a web product, a casual game, or anything that should run itself with minimal human babysitting. Use when starting a brand-new self-running project and you want a CEO-orchestrated architecture (main agent → sub-agents → skills → CLI/MCP) scaffolded from a short structured interview. Triggers - "start a new autonomous project", "scaffold a project constitution", "set up an agent-run project", "generate a CLAUDE.md / AGENTS.md for a new project", "design the workflow for X", "bootstrap a self-running pipeline".
-version: 2.0.0
+description: The Loop Design Bible — design self-running agent LOOPS (not just prompts) and generate a complete "constitution + documentation system" for a new autonomous, agent-run project — a content channel, an ebook press, an SEO tool-site, a web product, a casual game, or anything that should run itself with minimal human babysitting. Teaches the eight-part loop architecture (Trigger · Context Injection · Agent Role · Tools · Verification · State · Retry · Escalation) and runs a CEO-orchestrated scaffold (main agent → sub-agents → skills → CLI/MCP) from a short structured interview. Triggers - "design a loop / agent loop", "design the loop for X", "start a new autonomous project", "scaffold a project constitution", "set up an agent-run project", "generate a CLAUDE.md / AGENTS.md for a new project", "design the workflow for X", "bootstrap a self-running pipeline".
+version: 3.0.0
 license: MIT
 ---
 
-# Workflow Design Bible — a constitution generator for autonomous, agent-run projects
+# Loop Design Bible — design self-running agent loops, and a constitution generator for autonomous projects
 
-> **What this skill is.** A reusable *meta system prompt*. When the user wants to
-> create a new autonomous project (content/video channel, ebook/publishing,
-> SEO tool-site/wiki, web product, casual game, …), this skill runs a short
-> **structured interview**, then **fills in a standard "constitution + docs"
-> system**: a lean root `CLAUDE.md` (the project constitution) + a
-> `documentation/configuration.json` + a `documentation/` folder of
-> single-source-of-truth docs + empty `.claude/agents/`, `.claude/skills/`,
-> `reflections/`, `reports/` skeletons.
+> **What this skill is.** A reusable *meta system prompt* with two jobs. (1) It
+> teaches you to **design loops, not just write prompts** — every self-running
+> agent system is one *iteration* built from eight parts (Trigger · Context
+> Injection · Agent Role · Tools · Verification · State · Retry · Escalation); the
+> [`docs/`](../../docs/01-loop-thinking.md), [`templates/`](../../templates/loop-blueprint.md),
+> and [`examples/`](../../examples/coding-agent-loop.md) at the repo root are the
+> full curriculum. (2) When the user wants to create a new autonomous project
+> (content/video channel, ebook/publishing, SEO tool-site/wiki, web product, casual
+> game, …), this skill runs a short **structured interview**, then **fills in a
+> standard "constitution + docs" system**: a lean root `CLAUDE.md` (the project
+> constitution) + a `documentation/configuration.json` + a `documentation/` folder
+> of single-source-of-truth docs + empty `.claude/agents/`, `.claude/skills/`,
+> `reflections/`, `reports/` skeletons. The constitution *is* the project's loops
+> written down; the interview fills its pipeline spine with loops you design using
+> the eight parts.
 >
 > **What this skill does *not* do.** It runs **no business code**, writes **no
 > application logic**, and deploys nothing. It only does **interview → generate
@@ -35,6 +42,60 @@ license: MIT
 > **"the user" = the human owner/chairman** who sets direction and signs off.
 > Filenames like `CLAUDE.md` are conventions — substitute whatever your runtime
 > reads as its top-level agent instructions (e.g. `AGENTS.md`).
+
+---
+
+## 0. The loop lens — design loops, not just prompts
+
+A prompt produces one output. A **loop** produces a system that keeps producing
+outputs — and improves at it. The moment a request starts with *keep…*, *every…*,
+*run…*, *maintain…*, *grow…*, or *until done*, stop sharpening a prompt and design
+the **eight parts of a loop**:
+
+| # | Part | Answers | Skip it → |
+|---|---|---|---|
+| ① | **Trigger** | What starts an iteration? | you are the trigger; no real loop |
+| ② | **Context Injection** | What does it know? | context bloat, drift, rising cost |
+| ③ | **Agent Role** | Who runs it? | a do-everything agent that can't scale |
+| ④ | **Tools** | What can it do? | fragile re-derived actions, wasted tokens |
+| ⑤ | **Verification** | How do you know it worked? | silent quality drift into slop |
+| ⑥ | **State** | What does it remember? | Groundhog Day; never improves |
+| ⑦ | **Retry** | What on failure? | a hiccup kills the run (or hangs forever) |
+| ⑧ | **Escalation** | When ask a human? | constant pinging, or fabrication past blockers |
+
+```
+① TRIGGER → ② CONTEXT INJECTION → ③ AGENT ROLE → ④ TOOLS
+                                                    │
+   ⑥ STATE ◀──[pass]── ⑤ VERIFICATION ──[fail]──▶ ⑦ RETRY ──▶ ⑧ ESCALATION
+```
+
+The eight design philosophies below (§A) and these eight loop parts are **the same
+machine seen from two angles** — the CEO architecture is *how* you build the loops;
+the eight parts are *what* one iteration is. **Verification and State are
+load-bearing**: the first is the only part that can say *no* (quality), the second
+the only part that survives the window (memory). The mapping is spelled out in
+[`docs/05-from-workflow-to-loop.md`](../../docs/05-from-workflow-to-loop.md).
+
+> ### 📚 The Loop Design Bible (repo root — read on demand)
+> **Curriculum** — [`docs/01-loop-thinking.md`](../../docs/01-loop-thinking.md) (prompts→loops) ·
+> [`02-loop-anatomy.md`](../../docs/02-loop-anatomy.md) (the eight parts) ·
+> [`03-verification-and-state.md`](../../docs/03-verification-and-state.md) (the two hard parts) ·
+> [`04-retry-and-escalation.md`](../../docs/04-retry-and-escalation.md) (safe failure) ·
+> [`05-from-workflow-to-loop.md`](../../docs/05-from-workflow-to-loop.md) (bridge to §A) ·
+> [`06-agent-loop-patterns.md`](../../docs/06-agent-loop-patterns.md) (a pattern catalog).
+> **Design tools** — [`templates/loop-blueprint.md`](../../templates/loop-blueprint.md) (design one loop) ·
+> [`verification-checklist.md`](../../templates/verification-checklist.md) (gate part ⑤) ·
+> [`memory-state-template.md`](../../templates/memory-state-template.md) (design part ⑥) ·
+> [`skill-template.md`](../../templates/skill-template.md) (freeze part ④ into a capability).
+> **Worked designs** — [`examples/coding-agent-loop.md`](../../examples/coding-agent-loop.md) ·
+> [`content-production-loop.md`](../../examples/content-production-loop.md) ·
+> [`customer-acquisition-loop.md`](../../examples/customer-acquisition-loop.md).
+
+> **How this section feeds the interview (§C).** Each row of the generated pipeline
+> spine is a loop. When you nail down a step in Round 3, design its eight parts with
+> the blueprint; the step's verification gate, lifeline-DB fields, and
+> escalation rules are parts ⑤/⑥/⑧ of *that* loop. The constitution is the loops,
+> written down.
 
 ---
 
@@ -212,11 +273,17 @@ Ask which archetype the project is; each preloads a different spine draft:
 - Trust / E-E-A-T anchor (site / author identity)?
 - Payment / account entity (if monetized)?
 
-### Round 3 · Pipeline spine (step by step)
+### Round 3 · Pipeline spine (step by step) — *each step is a loop*
 - Starting from the archetype draft, nail down **each step**: what it does → its
   output → the lead role.
 - Mark **which steps can run in parallel** (the fan-out points).
 - Confirm the last step = reflection & self-iteration.
+- **Treat every step as a loop** (§0): for each, at minimum settle its **Trigger**
+  (what hands it work), its **Verification** gate (how its output is proven — part
+  ⑤), and its **Escalation** rule (part ⑧). Use
+  [`templates/loop-blueprint.md`](../../templates/loop-blueprint.md) for any step
+  complex enough to deserve its own eight-part design; the
+  [`examples/`](../../examples/coding-agent-loop.md) show finished ones.
 
 ### Round 4 · Roles (sub-agent split) + global/local capabilities
 - One sub-agent per fixed step: name + one-line role + which step.

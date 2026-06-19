@@ -4,13 +4,13 @@
     "name": "preangelleo",
     "url": "https://github.com/hly990"
   },
-  "description": "Marketplace for the Workflow Design Bible plugin — a constitution generator for autonomous, agent-run projects.",
+  "description": "Marketplace for the Loop Design Bible plugin — design self-running agent loops, and scaffold the constitution that runs them.",
   "plugins": [
     {
       "name": "workflow-design-bible",
       "source": "./",
-      "description": "A constitution generator for autonomous, agent-run projects: interview -> scaffold a lean CLAUDE.md constitution, a brand configuration.json, and a documentation/ skeleton around a CEO-orchestrated architecture.",
-      "version": "2.0.0",
+      "description": "The Loop Design Bible: design self-running agent loops with the eight-part architecture (Trigger, Context Injection, Agent Role, Tools, Verification, State, Retry, Escalation), plus a constitution generator that interviews you and scaffolds a lean CLAUDE.md constitution, a brand configuration.json, and a documentation/ skeleton around a CEO-orchestrated architecture.",
+      "version": "3.0.0",
       "author": {
         "name": "preangelleo",
         "url": "https://github.com/hly990"
@@ -18,6 +18,8 @@
       "homepage": "https://github.com/hly990/workflow-design-bible",
       "license": "MIT",
       "keywords": [
+        "loop-design",
+        "agent-loops",
         "constitution",
         "autonomous-agents",
         "scaffold",

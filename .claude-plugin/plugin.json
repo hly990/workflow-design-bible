@@ -1,8 +1,8 @@
 {
   "name": "workflow-design-bible",
-  "displayName": "Workflow Design Bible",
-  "version": "2.0.0",
-  "description": "A constitution generator for autonomous, agent-run projects. Runs a short structured interview, then scaffolds a complete constitution + documentation system (a lean root CLAUDE.md, a brand configuration.json, and a documentation/ skeleton) around a CEO-orchestrated architecture: main agent -> sub-agents -> skills -> CLI/MCP.",
+  "displayName": "Loop Design Bible",
+  "version": "3.0.0",
+  "description": "The Loop Design Bible: design self-running agent LOOPS, not just prompts, using the eight-part architecture (Trigger, Context Injection, Agent Role, Tools, Verification, State, Retry, Escalation). Also a constitution generator that interviews you and scaffolds a complete constitution + documentation system (a lean root CLAUDE.md, a brand configuration.json, and a documentation/ skeleton) around a CEO-orchestrated architecture: main agent -> sub-agents -> skills -> CLI/MCP.",
   "author": {
     "name": "preangelleo",
     "url": "https://github.com/hly990"
@@ -11,6 +11,8 @@
   "repository": "https://github.com/hly990/workflow-design-bible",
   "license": "MIT",
   "keywords": [
+    "loop-design",
+    "agent-loops",
     "constitution",
     "autonomous-agents",
     "scaffold",
