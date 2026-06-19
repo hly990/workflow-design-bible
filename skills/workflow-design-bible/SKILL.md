@@ -77,6 +77,9 @@ the only part that survives the window (memory). The mapping is spelled out in
 [`docs/05-from-workflow-to-loop.md`](../../docs/05-from-workflow-to-loop.md).
 
 > ### 📚 The Loop Design Bible (repo root — read on demand)
+> **Capstone skill** — [`docs/00-scaffold-a-self-running-project.md`](../../docs/00-scaffold-a-self-running-project.md):
+> a self-contained, loop-first procedure (inline templates) that scaffolds a whole
+> autonomous project from one file — the actionable counterpart to this interview skill.
 > **Curriculum** — [`docs/01-loop-thinking.md`](../../docs/01-loop-thinking.md) (prompts→loops) ·
 > [`02-loop-anatomy.md`](../../docs/02-loop-anatomy.md) (the eight parts) ·
 > [`03-verification-and-state.md`](../../docs/03-verification-and-state.md) (the two hard parts) ·

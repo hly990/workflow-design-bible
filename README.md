@@ -63,6 +63,7 @@ Six docs, four templates, three worked examples — a full curriculum at the rep
 
 | Doc | What it covers |
 |---|---|
+| [`00-scaffold-a-self-running-project.md`](./docs/00-scaffold-a-self-running-project.md) | **The capstone skill** — a self-contained, loop-first procedure that scaffolds a whole autonomous project (inline templates; paste-and-run). |
 | [`01-loop-thinking.md`](./docs/01-loop-thinking.md) | The paradigm shift: design the loop, not the prompt. |
 | [`02-loop-anatomy.md`](./docs/02-loop-anatomy.md) | The eight parts, each with its design questions and failure mode. |
 | [`03-verification-and-state.md`](./docs/03-verification-and-state.md) | The two load-bearing parts, in depth. |

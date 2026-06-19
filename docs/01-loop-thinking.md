@@ -121,6 +121,10 @@ subsumes "design the workflow."
 4. **Bridge from workflows** — [`05-from-workflow-to-loop.md`](./05-from-workflow-to-loop.md). Map the CEO philosophies onto loops; migrate an existing workflow.
 5. **Steal a pattern** — [`06-agent-loop-patterns.md`](./06-agent-loop-patterns.md). A catalog of proven loop shapes.
 
+In a hurry to scaffold a whole project? The capstone skill
+[`00-scaffold-a-self-running-project.md`](./00-scaffold-a-self-running-project.md) is a
+self-contained, paste-and-run procedure that applies everything below in one file.
+
 Then **design your loop** with the [`loop-blueprint.md`](../templates/loop-blueprint.md)
 template, gate it with the [`verification-checklist.md`](../templates/verification-checklist.md),
 give it memory with the [`memory-state-template.md`](../templates/memory-state-template.md),
